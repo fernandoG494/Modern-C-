@@ -12,8 +12,24 @@
 
 using namespace std;
 
+void Euclid(int a, int b){
+	if(a == 0){
+		cout << b << endl;
+	}else if(b == 0){
+		cout << a << endl;
+	}else{
+		int multiplo = a/b;
+		int act = a - (b * multiplo);
+		Euclid(b, act);
+	}
+}
+
 int main(int argc, char const *argv[])
 {
-    
+    unsigned int n1, n2;
+    unsigned int common;
+    cout << "Number 1: "; cin >> n1;
+    cout << "Number 2: "; cin >> n2;
+    Euclid(n1, n2);
     return 0;
 }
